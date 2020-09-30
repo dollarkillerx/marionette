@@ -1,0 +1,24 @@
+{
+  "name": "marionette",
+  "version": "1.0.0",
+  "description": "Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓取)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dollarkillerx/marionette.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dollarkillerx/marionette/issues"
+  },
+  "homepage": "https://github.com/dollarkillerx/marionette#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "puppeteer": "^5.3.1"
+  }
+}

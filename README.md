@@ -7,7 +7,9 @@ Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓
 GET /ssr?q=http://google.com
 
 RESPONSE:
-HTML  返回标准HTML
+HTML  
+Status
+Cookie
 ```
 - 获取更多数据
 ``` 

@@ -2,9 +2,10 @@
   "name": "marionette",
   "version": "1.0.0",
   "description": "Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓取)",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "rollup --watch --config rollup.config.ts",
+    "build": "rollup --config rollup.config.ts"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,16 @@
   },
   "homepage": "https://github.com/dollarkillerx/marionette#readme",
   "dependencies": {
+    "@types/koa": "^2.11.4",
+    "@types/koa-router": "^7.4.1",
+    "@types/puppeteer": "^3.0.2",
     "koa": "^2.13.0",
     "koa-router": "^9.4.0",
-    "puppeteer": "^5.3.1"
+    "puppeteer": "^5.3.1",
+    "rollup": "^2.28.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "typescript": "^4.0.3"
   }
 }

@@ -3,7 +3,6 @@
 image_name=marionette:latest
 
 package() {
-
   docker rmi -f $image_name
   docker build -f deploy/Dockerfile -t $image_name  .
   docker save -o marionette.tar $image_name

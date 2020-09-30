@@ -1,6 +1,13 @@
 # marionette
 Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓取)
 
+### Run
+node >= 14
+``` 
+npm i
+npm start
+```
+
 ### Result API
 - SSR 浏览器渲染
 ``` 

@@ -15,7 +15,7 @@ router.get('/', async (ctx) => {
 router.get('/ssr', async (ctx) => {
     let path = `${ctx.request.querystring}`;
     path = await getUrl(path)
-    const { html, status: code, cookies } = await crawler(path);
+    const {html, status: code, cookies} = await crawler(path);
 
     ctx.body = html
     ctx.status = code
@@ -28,9 +28,9 @@ router.get('/avaricious', async (ctx) => {
     let path = `${ctx.request.querystring}`;
     path = await getUrl(path)
 
-    const { html, status: code, cookies } = await crawler(path);
+    const {html, status: code, cookies} = await crawler(path);
     console.log(html, code, cookies)
-    ctx.body = { html, statusCode: code, cookies }
+    ctx.body = {html, statusCode: code, cookies}
 })
 
 async function getUrl(path) {
@@ -61,11 +61,16 @@ async function crawler(url) {
     // let code = await page.status();
     // console.log(code);
     page.close();
-    return { html, status: resp.status(), cookies }
+    return {html, status: resp.status(), cookies}
 }
 
 async function main() {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch(
+        {headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage']}
+    );
+    // const browser = await puppeteer.launch(
+    //     {headless: true}
+    // );
     globalThis.browser = browser
     app.use(router.routes());
     app.listen(3000);

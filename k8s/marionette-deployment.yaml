@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: marionette
+  name: marionette
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: marionette
+  template:
+    metadata:
+      labels:
+        app: marionette
+    spec:
+      restartPolicy: Always
+      containers:
+          image: dollarkiller/marionette:latest
+          imagePullPolicy: Always
+          name: marionette
+          ports:
+            - containerPort: 3000

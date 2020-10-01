@@ -41,3 +41,8 @@ RESPONSE:
     ]
 }
 ```
+
+### Docker
+``` 
+docker run --name marionette -d -p3000:3000 dollarkiller/marionette:latest
+```

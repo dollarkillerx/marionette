@@ -16,7 +16,7 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-          image: dollarkiller/marionette:latest
+        - image: dollarkiller/marionette:latest
           imagePullPolicy: Always
           name: marionette
           ports:

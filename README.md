@@ -46,3 +46,7 @@ RESPONSE:
 ``` 
 docker run --name marionette -d -p3000:3000 dollarkiller/marionette:latest
 ```
+
+### dev
+- `yarn config set registry https://registry.npm.taobao.org/`
+- `yarn install`

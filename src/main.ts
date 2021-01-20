@@ -76,7 +76,7 @@ async function random(min: number, max: number) {
 
 async function main() {
     // @ts-ignore
-    globalThis.browser = await puppeteer.launch({headless: true})
+    globalThis.browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage']})
     app.use(router.routes());
     app.listen(3030);
 }

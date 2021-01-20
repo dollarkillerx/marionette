@@ -44,7 +44,7 @@ RESPONSE:
 
 ### Docker
 ``` 
-docker run --name marionette -d -p3000:3000 dollarkiller/marionette:latest
+docker run --name marionette -d -p3030:3030 dollarkiller/marionette:latest
 ```
 
 ### dev

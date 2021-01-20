@@ -1,6 +1,6 @@
 #!/bin/bash
 
-image_name=marionette:2
+image_name=marionette:latest
 
 package() {
   docker rmi -f $image_name

@@ -44,10 +44,6 @@ var koa_router_1 = __importDefault(require("koa-router"));
 var puppeteer_1 = __importDefault(require("puppeteer"));
 var lib_1 = __importDefault(require("./lib"));
 var app = new koa_1.default();
-// app.use(async (ctx, next) => {
-//   console.log(`Process ${ctx.request.method} ${ctx.request.url}`);
-//   await next();
-// })
 var router = new koa_router_1.default();
 router.get('/ssr', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
     var path, _a, html, code, cookies;
@@ -168,21 +164,23 @@ function random(min, max) {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var browser;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, puppeteer_1.default.launch({ headless: true })];
-                case 1:
-                    browser = _a.sent();
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
                     // @ts-ignore
-                    globalThis.browser = browser;
+                    _a = globalThis;
+                    return [4 /*yield*/, puppeteer_1.default.launch({ headless: true })];
+                case 1:
+                    // @ts-ignore
+                    _a.browser = _b.sent();
                     app.use(router.routes());
-                    app.listen(5000);
+                    app.listen(3030);
                     return [2 /*return*/];
             }
         });
     });
 }
 main().then(function (r) {
-    console.log('server is running in', 5000);
+    console.log('server is running in', 3030);
 });

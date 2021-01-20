@@ -45,6 +45,12 @@ var puppeteer_1 = __importDefault(require("puppeteer"));
 var lib_1 = __importDefault(require("./lib"));
 var app = new koa_1.default();
 var router = new koa_router_1.default();
+router.get('/', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        ctx.body = "Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓取) https://github.com/dollarkillerx/marionette";
+        return [2 /*return*/];
+    });
+}); });
 router.get('/ssr', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
     var path, _a, html, code, cookies;
     return __generator(this, function (_b) {
@@ -170,7 +176,7 @@ function main() {
                 case 0:
                     // @ts-ignore
                     _a = globalThis;
-                    return [4 /*yield*/, puppeteer_1.default.launch({ headless: true })];
+                    return [4 /*yield*/, puppeteer_1.default.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] })];
                 case 1:
                     // @ts-ignore
                     _a.browser = _b.sent();

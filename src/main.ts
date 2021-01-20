@@ -7,6 +7,10 @@ const app = new Koa();
 
 const router = new KoaRouter()
 
+router.get('/', async (ctx) => {
+    ctx.body = "Fast dynamic site crawling based on puppeteer (基于puppeteer的动态网站抓取) https://github.com/dollarkillerx/marionette"
+})
+
 router.get('/ssr', async (ctx) => {
     let path = `${ctx.request.querystring}`;
     path = await getUrl(path)

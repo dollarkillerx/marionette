@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  marionette:
+    image: dollarkiller/marionette:latest
+    restart: always
+
+  nginx:
+    image: nginx:1-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - marionette
+    ports:
+      - "3030:3030"
+
+# docker-compose scale marionette=10
